@@ -1,0 +1,33 @@
+<script src="js/jquery.js"></script>
+<form method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"   >
+<input name="FNAME" type="text" id="mce-FNAME" class="textbox" placeholder="First Name" required="true">
+<input name="EMAIL" type="email" id="mce-EMAIL" class="textbox required" placeholder="Email Address" required="true">
+<input name="" type="submit" class="btn_subscribe">
+</form>
+
+  <script>
+// Attach a submit handler to the form
+$( "#mc-embedded-subscribe-form" ).submit(function( event ) {
+
+//alert('data');
+//return false;
+ event.preventDefault();
+ var formData = {name:"ravi",email:"bmkbaltech@gmail.com"}; //Array 
+	$.ajax({
+		url : 'http://isbel.us5.list-manage1.com/subscribe/post?u=4ad4d2fcd1a5fd07034239606&amp;id=195c7861c0' , 
+		type: "POST",
+		data : formData,
+		success: function(data, textStatus, jqXHR)
+		{
+			//alert('success'+ data);
+			//data - response from server
+		},
+		error: function (jqXHR, textStatus, errorThrown)
+		{
+			//alert('error');
+		}
+	});
+ 
+	
+});
+</script>	  
